@@ -1,3 +1,6 @@
+MORE INSTRUCTIONS AND EXPLANATION OVER AT THIS LINK:
+https://afadingthought.substack.com/p/note-taking-with-bear-and-alfred
+
 # alfred-bear-capture
 Alfred Worklow for Triggering Bear Capture Shortcut
 
