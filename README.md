@@ -9,8 +9,6 @@ https://www.icloud.com/shortcuts/4f1c4fe8b2164862b0ab59c0f397745f
 
 2. The setup of the shortcut will also ask for an *inbox tag,* where any new notes created will go. I personally like to also insert this tag in my *inbox note* so that all the thoughts or ideas captured on the go are in the same place for me to come back and process later.
 
-**IMAGE**
-
 3. The Alfred Worklow should work as-is unless you change the name of the Shortcut—which by default is “Bear Capture.” You can go into the variables of the workflow and change the name there in case you need to. You will also want to customize all the Hotkeys so that they make sense to you.
 
 - - - -
