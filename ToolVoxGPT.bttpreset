@@ -1,0 +1,185 @@
+[
+  {
+    "BTTLastUpdatedAt" : 1691027759.401536,
+    "BTTTriggerType" : 0,
+    "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+    "BTTPredefinedActionType" : 327,
+    "BTTPredefinedActionName" : "Show Custom Context Menu (NEW)",
+    "BTTAdditionalConfiguration" : "0",
+    "BTTKeyboardShortcutKeyboardType" : 1020,
+    "BTTUUID" : "77B5789C-8853-40C3-AE95-5ABEC6A08A35",
+    "BTTTriggerOnDown" : 1,
+    "BTTLayoutIndependentChar" : "",
+    "BTTEnabled" : 1,
+    "BTTEnabled2" : 1,
+    "BTTShortcutKeyCode" : -1,
+    "BTTShortcutModifierKeys" : 0,
+    "BTTOrder" : 15,
+    "BTTAutoAdaptToKeyboardLayout" : 0,
+    "BTTAdditionalActions" : [
+      {
+        "BTTLastUpdatedAt" : 1691018622.3512812,
+        "BTTTriggerType" : 716,
+        "BTTTriggerTypeDescription" : "Send to ToolVox GPT & Replace",
+        "BTTTriggerClass" : "BTTTriggerTypeCustomActionConfig",
+        "BTTPredefinedActionType" : 172,
+        "BTTPredefinedActionName" : "Run Apple Script (blocking)",
+        "BTTAdditionalActionData" : {
+          "BTTScriptType" : 0,
+          "BTTAppleScriptRunInBackground" : false,
+          "BTTTouchBarAppleScriptString" : "tell application \"System Events\"\r\tset ClipboardHolder to (the clipboard as text)\r\tdelay 0.2\r\tkeystroke \"c\" using {command down}\r\tdelay 0.2\r\tset SelectedText to (the clipboard as text)\r\tset the clipboard to ClipboardHolder\n\tdelay 0.2\rend tell\rtell application \"Shortcuts Events\"\r\tset TheResult to item 1 of (run shortcut named \"ToolVox GPT\" with input \"•dsr•\" & SelectedText)\rend tell\rtell application \"System Events\"\r\tset ClipboardHolder to (the clipboard as text)\r\tset the clipboard to TheResult\n\tdelay 0.2\r\tkeystroke \"v\" using {command down}\n    delay 0.2\r\tset the clipboard to ClipboardHolder\rend tell",
+          "BTTTouchBarAppleScriptUsePath" : false
+        },
+        "BTTGenericActionConfig" : "tell application \"System Events\"\r\tset ClipboardHolder to (the clipboard as text)\r\tdelay 0.2\r\tkeystroke \"c\" using {command down}\r\tdelay 0.2\r\tset SelectedText to (the clipboard as text)\r\tset the clipboard to ClipboardHolder\n\tdelay 0.2\rend tell\rtell application \"Shortcuts Events\"\r\tset TheResult to item 1 of (run shortcut named \"ToolVox GPT\" with input \"•dsr•\" & SelectedText)\rend tell\rtell application \"System Events\"\r\tset ClipboardHolder to (the clipboard as text)\r\tset the clipboard to TheResult\n\tdelay 0.2\r\tkeystroke \"v\" using {command down}\n    delay 0.2\r\tset the clipboard to ClipboardHolder\rend tell",
+        "BTTInlineAppleScript" : "tell application \"System Events\"\r\tset ClipboardHolder to (the clipboard as text)\r\tdelay 0.2\r\tkeystroke \"c\" using {command down}\r\tdelay 0.2\r\tset SelectedText to (the clipboard as text)\r\tset the clipboard to ClipboardHolder\n\tdelay 0.2\rend tell\rtell application \"Shortcuts Events\"\r\tset TheResult to item 1 of (run shortcut named \"ToolVox GPT\" with input \"•dsr•\" & SelectedText)\rend tell\rtell application \"System Events\"\r\tset ClipboardHolder to (the clipboard as text)\r\tset the clipboard to TheResult\n\tdelay 0.2\r\tkeystroke \"v\" using {command down}\n    delay 0.2\r\tset the clipboard to ClipboardHolder\rend tell",
+        "BTTUUID" : "749B51E7-1876-4459-911D-D1E354D06535",
+        "BTTEnabled" : 1,
+        "BTTEnabled2" : 1,
+        "BTTCustomContextMenuItemConfig" : {
+          "BTTCustomContextMenuIconHeight" : 25,
+          "BTTCustomContextMenuIconWidth" : 25,
+          "BTTCustomContextMenuItemName" : "Send to ToolVox GPT & Replace"
+        },
+        "BTTAdditionalData" : "eyJCVFRDdXN0b21Db250ZXh0TWVudUljb25IZWlnaHQiOjI1LCJCVFRDdXN0b21Db250ZXh0TWVudUljb25XaWR0aCI6MjUsIkJUVEN1c3RvbUNvbnRleHRNZW51SXRlbU5hbWUiOiJTZW5kIHRvIFRvb2xWb3ggR1BUICYgUmVwbGFjZSJ9"
+      },
+      {
+        "BTTLastUpdatedAt" : 1691018675.001514,
+        "BTTTriggerType" : 716,
+        "BTTTriggerTypeDescription" : "Send to ToolVox GPT & Chat",
+        "BTTTriggerClass" : "BTTTriggerTypeCustomActionConfig",
+        "BTTPredefinedActionType" : 172,
+        "BTTPredefinedActionName" : "Run Apple Script (blocking)",
+        "BTTAdditionalActionData" : {
+          "BTTScriptType" : 0,
+          "BTTAppleScriptRunInBackground" : false,
+          "BTTTouchBarAppleScriptString" : "  tell application \"System Events\"\n  \tset ClipboardHolder to (the clipboard as text)\n\tdelay 0.2\n    keystroke \"c\" using {command down}\n\tdelay 0.2\n\tset SelectedText to (the clipboard as text)\n\tdelay 0.2\n\tset the clipboard to ClipboardHolder\n  end tell\ntell application \"Shortcuts Events\" to run the shortcut named \"ToolVox GPT\" with input SelectedText",
+          "BTTTouchBarAppleScriptUsePath" : false
+        },
+        "BTTGenericActionConfig" : "  tell application \"System Events\"\n  \tset ClipboardHolder to (the clipboard as text)\n\tdelay 0.2\n    keystroke \"c\" using {command down}\n\tdelay 0.2\n\tset SelectedText to (the clipboard as text)\n\tdelay 0.2\n\tset the clipboard to ClipboardHolder\n  end tell\ntell application \"Shortcuts Events\" to run the shortcut named \"ToolVox GPT\" with input SelectedText",
+        "BTTInlineAppleScript" : "  tell application \"System Events\"\n  \tset ClipboardHolder to (the clipboard as text)\n\tdelay 0.2\n    keystroke \"c\" using {command down}\n\tdelay 0.2\n\tset SelectedText to (the clipboard as text)\n\tdelay 0.2\n\tset the clipboard to ClipboardHolder\n  end tell\ntell application \"Shortcuts Events\" to run the shortcut named \"ToolVox GPT\" with input SelectedText",
+        "BTTUUID" : "62739E09-4D40-4AB4-9787-F7D062DDB677",
+        "BTTEnabled" : 1,
+        "BTTEnabled2" : 1,
+        "BTTOrder" : 1,
+        "BTTCustomContextMenuItemConfig" : {
+          "BTTCustomContextMenuIconHeight" : 25,
+          "BTTCustomContextMenuIconWidth" : 25,
+          "BTTCustomContextMenuItemName" : "Send to ToolVox GPT & Chat"
+        },
+        "BTTAdditionalData" : "eyJCVFRDdXN0b21Db250ZXh0TWVudUljb25IZWlnaHQiOjI1LCJCVFRDdXN0b21Db250ZXh0TWVudUljb25XaWR0aCI6MjUsIkJUVEN1c3RvbUNvbnRleHRNZW51SXRlbU5hbWUiOiJTZW5kIHRvIFRvb2xWb3ggR1BUICYgQ2hhdCJ9"
+      },
+      {
+        "BTTLastUpdatedAt" : 1690654771.3372731,
+        "BTTTriggerType" : 716,
+        "BTTTriggerTypeDescription" : "Context Menu Item",
+        "BTTTriggerClass" : "BTTTriggerTypeCustomActionConfig",
+        "BTTUUID" : "72B6ED3A-707F-4F60-B522-36C9C142BC19",
+        "BTTContextMenuItemType" : 1,
+        "BTTEnabled" : 1,
+        "BTTEnabled2" : 1,
+        "BTTOrder" : 2,
+        "BTTCustomContextMenuItemConfig" : {
+          "BTTCustomContextMenuIconHeight" : 25,
+          "BTTCustomContextMenuIconWidth" : 25,
+          "BTTCustomContextMenuType" : 1
+        },
+        "BTTAdditionalData" : "eyJCVFRDdXN0b21Db250ZXh0TWVudUljb25IZWlnaHQiOjI1LCJCVFRDdXN0b21Db250ZXh0TWVudUljb25XaWR0aCI6MjUsIkJUVEN1c3RvbUNvbnRleHRNZW51VHlwZSI6MX0="
+      },
+      {
+        "BTTLastUpdatedAt" : 1691018530.208322,
+        "BTTTriggerType" : 716,
+        "BTTTriggerTypeDescription" : "Send Prompt to ToolVox GPT & Replace",
+        "BTTTriggerClass" : "BTTTriggerTypeCustomActionConfig",
+        "BTTPredefinedActionType" : 172,
+        "BTTPredefinedActionName" : "Run Apple Script (blocking)",
+        "BTTAdditionalActionData" : {
+          "BTTScriptType" : 0,
+          "BTTAppleScriptRunInBackground" : false,
+          "BTTTouchBarAppleScriptString" : "  tell application \"System Events\"\n  \tset ClipboardHolder to (the clipboard as text)\n\tdelay 0.2\n    keystroke \"c\" using {command down}\n  end tell\n  delay 0.2\ntell application \"Shortcuts Events\"\r\tset TheResult to item 1 of (run shortcut named \"ToolVox GPT\" with input \"•dsr••dc••np•\" & (the clipboard as text))\rend tell\n  tell application \"System Events\"\n    delay 0.2\n    set the clipboard to TheResult\n    delay 0.2\n    keystroke \"v\" using {command down}\n\tdelay 0.2\n\tset the clipboard to ClipboardHolder\n  end tell\n  \n  \n",
+          "BTTTouchBarAppleScriptUsePath" : false
+        },
+        "BTTGenericActionConfig" : "  tell application \"System Events\"\n  \tset ClipboardHolder to (the clipboard as text)\n\tdelay 0.2\n    keystroke \"c\" using {command down}\n  end tell\n  delay 0.2\ntell application \"Shortcuts Events\"\r\tset TheResult to item 1 of (run shortcut named \"ToolVox GPT\" with input \"•dsr••dc••np•\" & (the clipboard as text))\rend tell\n  tell application \"System Events\"\n    delay 0.2\n    set the clipboard to TheResult\n    delay 0.2\n    keystroke \"v\" using {command down}\n\tdelay 0.2\n\tset the clipboard to ClipboardHolder\n  end tell\n  \n  \n",
+        "BTTInlineAppleScript" : "  tell application \"System Events\"\n  \tset ClipboardHolder to (the clipboard as text)\n\tdelay 0.2\n    keystroke \"c\" using {command down}\n  end tell\n  delay 0.2\ntell application \"Shortcuts Events\"\r\tset TheResult to item 1 of (run shortcut named \"ToolVox GPT\" with input \"•dsr••dc••np•\" & (the clipboard as text))\rend tell\n  tell application \"System Events\"\n    delay 0.2\n    set the clipboard to TheResult\n    delay 0.2\n    keystroke \"v\" using {command down}\n\tdelay 0.2\n\tset the clipboard to ClipboardHolder\n  end tell\n  \n  \n",
+        "BTTUUID" : "755C9E02-F957-43BF-93B3-3D264340434B",
+        "BTTEnabled" : 1,
+        "BTTEnabled2" : 1,
+        "BTTOrder" : 3,
+        "BTTCustomContextMenuItemConfig" : {
+          "BTTCustomContextMenuIconHeight" : 25,
+          "BTTCustomContextMenuIconWidth" : 25,
+          "BTTCustomContextMenuItemName" : "Send Prompt to ToolVox GPT & Replace"
+        },
+        "BTTAdditionalData" : "eyJCVFRDdXN0b21Db250ZXh0TWVudUljb25IZWlnaHQiOjI1LCJCVFRDdXN0b21Db250ZXh0TWVudUljb25XaWR0aCI6MjUsIkJUVEN1c3RvbUNvbnRleHRNZW51SXRlbU5hbWUiOiJTZW5kIFByb21wdCB0byBUb29sVm94IEdQVCAmIFJlcGxhY2UifQ=="
+      },
+      {
+        "BTTLastUpdatedAt" : 1691018822.0215011,
+        "BTTTriggerType" : 716,
+        "BTTTriggerTypeDescription" : "Send Prompt to ToolVox GPT & Attach Result",
+        "BTTTriggerClass" : "BTTTriggerTypeCustomActionConfig",
+        "BTTPredefinedActionType" : 172,
+        "BTTPredefinedActionName" : "Run Apple Script (blocking)",
+        "BTTAdditionalActionData" : {
+          "BTTScriptType" : 0,
+          "BTTAppleScriptRunInBackground" : false,
+          "BTTTouchBarAppleScriptString" : "  tell application \"System Events\"\n    set ClipboardHolder to (the clipboard as text)\n\tdelay 0.2\n    keystroke \"c\" using {command down}\n\tdelay 0.2\n    set ThePrompt to the clipboard\n\tdelay 0.2\n  end tell\ntell application \"Shortcuts Events\"\n\tset the clipboard to ThePrompt &  ASCII character 10 & item 1 of (run shortcut named \"ToolVox GPT\" with input \"•dsr••dc••np•\" & ThePrompt)\nend tell\ntell application \"System Events\"\n\tkeystroke \"v\" using {command down}\n\tdelay 0.2\n\tset the clipboard to ClipboardHolder\nend tell",
+          "BTTTouchBarAppleScriptUsePath" : false
+        },
+        "BTTGenericActionConfig" : "  tell application \"System Events\"\n    set ClipboardHolder to (the clipboard as text)\n\tdelay 0.2\n    keystroke \"c\" using {command down}\n\tdelay 0.2\n    set ThePrompt to the clipboard\n\tdelay 0.2\n  end tell\ntell application \"Shortcuts Events\"\n\tset the clipboard to ThePrompt &  ASCII character 10 & item 1 of (run shortcut named \"ToolVox GPT\" with input \"•dsr••dc••np•\" & ThePrompt)\nend tell\ntell application \"System Events\"\n\tkeystroke \"v\" using {command down}\n\tdelay 0.2\n\tset the clipboard to ClipboardHolder\nend tell",
+        "BTTInlineAppleScript" : "  tell application \"System Events\"\n    set ClipboardHolder to (the clipboard as text)\n\tdelay 0.2\n    keystroke \"c\" using {command down}\n\tdelay 0.2\n    set ThePrompt to the clipboard\n\tdelay 0.2\n  end tell\ntell application \"Shortcuts Events\"\n\tset the clipboard to ThePrompt &  ASCII character 10 & item 1 of (run shortcut named \"ToolVox GPT\" with input \"•dsr••dc••np•\" & ThePrompt)\nend tell\ntell application \"System Events\"\n\tkeystroke \"v\" using {command down}\n\tdelay 0.2\n\tset the clipboard to ClipboardHolder\nend tell",
+        "BTTUUID" : "E87CDDD4-9229-4E87-A9CE-CF19ADB14972",
+        "BTTEnabled" : 1,
+        "BTTEnabled2" : 1,
+        "BTTOrder" : 4,
+        "BTTCustomContextMenuItemConfig" : {
+          "BTTCustomContextMenuIconHeight" : 25,
+          "BTTCustomContextMenuIconWidth" : 25,
+          "BTTCustomContextMenuItemName" : "Send Prompt to ToolVox GPT & Attach Result"
+        },
+        "BTTAdditionalData" : "eyJCVFRDdXN0b21Db250ZXh0TWVudUljb25IZWlnaHQiOjI1LCJCVFRDdXN0b21Db250ZXh0TWVudUljb25XaWR0aCI6MjUsIkJUVEN1c3RvbUNvbnRleHRNZW51SXRlbU5hbWUiOiJTZW5kIFByb21wdCB0byBUb29sVm94IEdQVCAmIEF0dGFjaCBSZXN1bHQifQ=="
+      },
+      {
+        "BTTLastUpdatedAt" : 1690654771.33723,
+        "BTTTriggerType" : 716,
+        "BTTTriggerTypeDescription" : "Context Menu Item",
+        "BTTTriggerClass" : "BTTTriggerTypeCustomActionConfig",
+        "BTTUUID" : "AD511FB4-148E-4627-A1C0-48F0114B8C08",
+        "BTTContextMenuItemType" : 1,
+        "BTTEnabled" : 1,
+        "BTTEnabled2" : 1,
+        "BTTOrder" : 5,
+        "BTTCustomContextMenuItemConfig" : {
+          "BTTCustomContextMenuIconHeight" : 25,
+          "BTTCustomContextMenuIconWidth" : 25,
+          "BTTCustomContextMenuType" : 1
+        },
+        "BTTAdditionalData" : "eyJCVFRDdXN0b21Db250ZXh0TWVudUljb25IZWlnaHQiOjI1LCJCVFRDdXN0b21Db250ZXh0TWVudUljb25XaWR0aCI6MjUsIkJUVEN1c3RvbUNvbnRleHRNZW51VHlwZSI6MX0="
+      },
+      {
+        "BTTLastUpdatedAt" : 1690654771.3372469,
+        "BTTTriggerType" : 716,
+        "BTTTriggerTypeDescription" : "Run ToolVox GPT",
+        "BTTTriggerClass" : "BTTTriggerTypeCustomActionConfig",
+        "BTTPredefinedActionType" : 172,
+        "BTTPredefinedActionName" : "Run Apple Script (blocking)",
+        "BTTAdditionalActionData" : {
+          "BTTScriptType" : 0,
+          "BTTAppleScriptRunInBackground" : false,
+          "BTTTouchBarAppleScriptString" : "tell application \"Shortcuts Events\" to run the shortcut named \"ToolVox GPT\"",
+          "BTTTouchBarAppleScriptUsePath" : false
+        },
+        "BTTGenericActionConfig" : "tell application \"Shortcuts Events\" to run the shortcut named \"ToolVox GPT\"",
+        "BTTInlineAppleScript" : "tell application \"Shortcuts Events\" to run the shortcut named \"ToolVox GPT\"",
+        "BTTUUID" : "0E4E2BF3-2934-4B69-97E5-53857C20A8DF",
+        "BTTEnabled" : 1,
+        "BTTEnabled2" : 1,
+        "BTTOrder" : 6,
+        "BTTCustomContextMenuItemConfig" : {
+          "BTTCustomContextMenuIconHeight" : 25,
+          "BTTCustomContextMenuIconWidth" : 25,
+          "BTTCustomContextMenuItemName" : "Run ToolVox GPT"
+        },
+        "BTTAdditionalData" : "eyJCVFRDdXN0b21Db250ZXh0TWVudUljb25IZWlnaHQiOjI1LCJCVFRDdXN0b21Db250ZXh0TWVudUljb25XaWR0aCI6MjUsIkJUVEN1c3RvbUNvbnRleHRNZW51SXRlbU5hbWUiOiJSdW4gVG9vbFZveCBHUFQifQ=="
+      }
+    ]
+  }
+]
