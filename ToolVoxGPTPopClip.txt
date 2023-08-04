@@ -1,0 +1,44 @@
+# popclip
+name: ToolVox GPT
+icon: symbol:waveform.circle.fill
+AppleScript: | # pipe character begins a multi-line string
+  set theflag to "{popclip modifier flags}"
+  if (theflag = "131072") then
+  do shell script "open -g 'shortcuts://run-shortcut?name=ToolVox%20GPT&input={popclip urlencoded text}'"
+  else if (theflag = "1048576") then
+  tell application "Shortcuts Events"
+    set the TheResult to item 1 of (run shortcut named "ToolVox GPT" with input "•dsr••dc••np•{popclip text}")
+  end tell
+  tell application "System Events"
+    set ClipboardHolder to (the clipboard as text)
+    delay 0.2
+    set the clipboard to TheResult
+    keystroke "v" using {command down}
+    delay 0.2
+    set the clipboard to ClipboardHolder
+  end tell
+  else if (theflag = "1572864") then
+  tell application "Shortcuts Events"
+    set the TheResult to item 1 of (run shortcut named "ToolVox GPT" with input "•dsr••dc••np•{popclip text}")
+  end tell
+  tell application "System Events"
+    set ClipboardHolder to (the clipboard as text)
+    delay 0.2
+    set the clipboard to "{popclip text}" & ASCII character 10 & TheResult
+    keystroke "v" using {command down}
+    delay 0.2
+    set the clipboard to ClipboardHolder
+  end tell
+  else
+  tell application "Shortcuts Events"
+    set the TheResult to item 1 of (run shortcut named "ToolVox GPT" with input "•dsr•{popclip text}")
+  end tell
+  tell application "System Events"
+    set ClipboardHolder to (the clipboard as text)
+    delay 0.2
+    set the clipboard to TheResult
+    keystroke "v" using {command down}
+    delay 0.2
+    set the clipboard to ClipboardHolder
+  end tell
+  end if
