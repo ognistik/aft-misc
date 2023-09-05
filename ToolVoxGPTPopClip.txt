@@ -1,5 +1,5 @@
 # popclip
-name: ToolVox GPT
+name: ToolVox AI
 icon: symbol:waveform.circle.fill
 AppleScript: | # pipe character begins a multi-line string
   set theflag to "{popclip modifier flags}"
@@ -9,10 +9,10 @@ AppleScript: | # pipe character begins a multi-line string
   set the itemList to every text item of SelectedText
   set AppleScript's text item delimiters to "%27" -- URL encoded value for '
   set SelectedText to the itemList as string
-  do shell script "open -g 'shortcuts://run-shortcut?name=ToolVox%20GPT&input=" & SelectedText & "'"
+  do shell script "open -g 'shortcuts://run-shortcut?name=ToolVox%20AI&input=" & SelectedText & "'"
   else if (theflag = "1048576") then
   tell application "Shortcuts Events"
-    set the TheResult to item 1 of (run shortcut named "ToolVox GPT" with input "•dsr••dc••np•{popclip text}")
+    set the TheResult to item 1 of (run shortcut named "ToolVox AI" with input "•dsr••dc••np•{popclip text}")
   end tell
   tell application "System Events"
     set ClipboardHolder to (the clipboard as text)
@@ -24,7 +24,7 @@ AppleScript: | # pipe character begins a multi-line string
   end tell
   else if (theflag = "1572864") then
   tell application "Shortcuts Events"
-    set the TheResult to item 1 of (run shortcut named "ToolVox GPT" with input "•dsr••dc••np•{popclip text}")
+    set the TheResult to item 1 of (run shortcut named "ToolVox AI" with input "•dsr••dc••np•{popclip text}")
   end tell
   tell application "System Events"
     set ClipboardHolder to (the clipboard as text)
@@ -34,9 +34,16 @@ AppleScript: | # pipe character begins a multi-line string
     delay 0.2
     set the clipboard to ClipboardHolder
   end tell
+  else if (theflag = "1179648") then
+  set SelectedText to "{popclip urlencoded text}"
+  set AppleScript's text item delimiters to "'"
+  set the itemList to every text item of SelectedText
+  set AppleScript's text item delimiters to "%27" -- URL encoded value for '
+  set SelectedText to the itemList as string
+  do shell script "open -g 'shortcuts://run-shortcut?name=ToolVox%20AI&input=%E2%80%A2dc%E2%80%A2" & SelectedText & "'"
   else
   tell application "Shortcuts Events"
-    set the TheResult to item 1 of (run shortcut named "ToolVox GPT" with input "•dsr•{popclip text}")
+    set the TheResult to item 1 of (run shortcut named "ToolVox AI" with input "•dsr•{popclip text}")
   end tell
   tell application "System Events"
     set ClipboardHolder to (the clipboard as text)
