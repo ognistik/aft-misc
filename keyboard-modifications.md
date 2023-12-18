@@ -4,7 +4,7 @@ Read more in [THIS ARTICLE.](https://afadingthought.substack.com/p/turbocharge-y
 
 ## CAPS MODE & F19 (CAPS LOCK)
 ***Quick tap = escape**, quick tap + key = caps mode, tap + hold = F19 mode*
-### Caps Mode (has to be quickly activated before f19 kicks in).
+### Caps Mode (has to be quickly activated by pressing one of the following before f19 Mode kicks in).
 * Spanish Characters
   * Semicolon = Spanish ñ
   * Quote = Spanish tilde
