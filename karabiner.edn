@@ -1,0 +1,301 @@
+{ 
+        :profiles {
+                :Default {
+                        :default true
+
+                        :sim     30     ;; simultaneous key press threshold (def: 50)
+                                        ;; simlayer is implemented with to_if_alone and simultaneous key press feature
+                                        ;; if keydown event for two different keys are pressed within :sim ms, the keypresses are considered simultaneous
+                                        ;; simultaneous_threshold_milliseconds (def: 50)
+                                        ;; different from simlayers, this is for cases like [:a :b]
+                        :delay   160    ;; to_delayed_action_delay_milliseconds (def: 500)
+                                        ;; basically it means time after which the key press is count delayed
+                                        ;; after :delay ms, the key press is considered to be delayed
+                                        ;; (used for double-press macros)
+                                        ; NOTE: this should be equal to :held for mod-tap layers
+                        :held    160    ;; to_if_held_down_threshold_milliseconds (def: 500)
+                                        ;; key is fired twice when :held ms is elapsed (otherwise seen as a hold command) (TODO WHAT IS THIS??)
+                                        ;; useful for knowing when escape term finishes with caps mode.
+                                        ; NOTE: this should be equal to :delay for mod-tap layers
+                        :alone   159    ;; to_if_alone_timeout_milliseconds (def: 1000)
+                                        ;; affects to_if_alone behavior
+                                        ;; simlayer is implemented with to_if_alone and simultaneous key press feature
+                                        ;; if keyup event comes within :alone ms from keydown, the key is not just pressed but held
+                                        ; NOTE: (I think) this must be just less than the delay / held value to avoid bug where mod-tap layer stays 1
+                }
+                }
+        :simlayer-threshold 30
+        :templates {
+                :alfred "osascript -e 'tell application id \"com.runningwithcrayons.Alfred\" to run trigger \"%s\" in workflow \"%s\" with argument \"%s\"'"
+                :btt "osascript -e 'tell application \"BetterTouchTool\"' -e 'trigger_named \"%s\"' -e 'end tell'"
+                :km "osascript -e 'tell application \"Keyboard Maestro Engine\" to do script \"%s\"'"
+                :open "open \"%s\""
+                :open-g "open -g \"%s\""
+                :shell "%s"
+                :ts "osascript -e 'tell application \"System Events\" to keystroke \"c\" using {command down}' -e 'delay 0.1' -e 'tell application \"textsoapAgent\" to set oldTextValue to the Clipboard' -e 'tell application \"textsoapAgent\" to set newTextValue to cleanText oldTextValue with \"%s\"' -e 'tell application \"textsoapAgent\" to set the Clipboard to newTextValue' -e 'tell application \"System Events\" to keystroke \"v\" using {command down}'"
+                ;;Pay attention that the Shortcut input goes before the Shortcut name.
+                :sc "echo \"%s\"|shortcuts run \"%s\" -i -"
+                }
+        :applications {
+                :arc ["company.thebrowser.Browser"]
+                :terminal ["com.apple.Terminal"]
+                }
+        :layers {
+                ;;It works on f19 Superkey Seek (except when space is pressed for Spanish characters OR TERMINAL).
+                ;;Also works on SD Mode
+                :del-mode {:key :semicolon :condi [:!w-mode :!spacebarpress :!caps-mode :!m-mode :!a-mode]}
+            }
+        :main [
+       {:des "Mode or Layers Creation"
+                :rules [
+        ;;CAPS & F19 MODES: Quick tap CAPS = ESCAPE and CAPS MODE. Held = f19 for Superkey Seek (closes CAPS MODE).
+                [:##caps_lock ["caps-mode" 1] [:!del-mode :!f19-mode :!m-mode :!a-mode :!sd-mode :!w-mode] {:afterup [["caps-mode" 0] ["f19-mode" 0]] :alone {:key :escape} :held [["caps-mode" 0] ["f19-mode" 1] {:key :f19}] :params {:held 160 :delay 160 :alone 159}}]
+         ;;M MODE: Markdown and Text Transformations
+                [:m nil [:!del-mode :!f19-mode :!caps-mode :!a-mode :!sd-mode :!w-mode] {:alone {:key :m :halt true} :delayed {:canceled {:key :m}} :held {:set ["m-mode" 1] :repeat false} :afterup {:set ["m-mode" 0]}}]
+        ;;A MODE: ToolVox AI
+                [:a nil [:!del-mode :!f19-mode :!caps-mode :!m-mode :!sd-mode :!w-mode] {:alone {:key :a :halt true} :delayed {:canceled {:key :a}} :held {:set ["a-mode" 1] :repeat false} :afterup {:set ["a-mode" 0]}}]                      
+        ;;SD MODE: Text, Window, and Tabs Navigation (Super Duper Mode)
+               [{:sim [:s :d] :simo {:interrupt true :dorder :insensitive :uorder :insensitive :afterup {:set ["sd-mode" 0]}} :modi {:optional :any}} {:set ["sd-mode" 1]} [:!del-mode :!f19-mode :!caps-mode :!m-mode :!a-mode :!w-mode]]
+        ;;W MODE: Window Management
+                [:w nil [:!del-mode :!f19-mode :!caps-mode :!m-mode :!a-mode :!sd-mode] {:alone {:key :w :halt true} :delayed {:canceled {:key :w}} :held {:set ["w-mode" 1] :repeat false} :afterup {:set ["w-mode" 0]}}]   
+              ]
+       },
+       {:des "Don't repeat spaces"
+                :rules [
+                        [:spacebar {:key spacebar :repeat false} [:!caps-mode :!del-mode :!f19-mode :!m-mode :!a-mode :!sd-mode :!w-mode]]
+                ]},
+        {:des "Delete Shortcuts"
+                :rules [
+                        [:!Sright_shift :caps_lock]
+                        [:!PSright_shift :caps_lock]
+                        [:##right_shift :right_shift nil {:alone {:key :delete_forward}}]
+                        [:##left_shift :left_shift nil {:alone {:key :delete_or_backspace}}]
+                ;;the del-mode layer
+                        [:condi :del-mode :!terminal] [:a :!Odelete_or_backspace]
+                        [:condi :del-mode :terminal] [:a :!Tw]
+                ]},
+        {:des "F19 Mode - (Seek from Superkey)"
+                :rules [:f19-mode
+                ;;Let's move our modifiers up a few rows.
+                [:##d nil nil {:alone {:key :d :halt true} :delayed {:canceled {:key :d}} :held {:key :left_command}}]
+                [:##s nil nil {:alone {:key :s :halt true} :delayed {:canceled {:key :s}} :held {:key :left_option}}]
+                [:##a nil nil {:alone {:key :a :halt true} :delayed {:canceled {:key :a}} :held {:key :left_control}}]
+                ;;Let's recover our escape key by holding spacebar + e, and go back to caps mode with it.
+                [:spacebar nil nil {:alone {:key :spacebar :halt true} :delayed {:canceled [{:key :spacebar} {:set ["spacebarpress" 0]}]} :held {:set ["spacebarpress" 1]} :afterup {:set ["spacebarpress" 0]}}]
+                [:##e [["caps-mode" 1] {:key :escape}] [["spacebarpress" 1] ["f19-mode" 1]]]
+                ;;Easier to tap backspace deletes on left command
+                [:##left_command :delete_or_backspace]
+                ;;Easier to tap tab on right command
+                [:##right_command :tab]
+                ;;Let's type Spanish characters with spacebar as modifier, just as pressing escape.
+                ;;I am deactivating this tab to get used to the other one in this mode.
+                [:##tab :vk_none]
+                [:condi :spacebarpress :f19-mode]
+                [:semicolon [:!On :n]]
+                [:quote :!Oe]
+                ]},
+        {:des "Caps Mode Rules - Lasts only for a few milliseconds"
+                :rules [:caps-mode
+                ;;Spanish Characters.
+                        [:semicolon [:!On :n]]
+                        [:quote :!Oe]
+                ;;Homerow and Seek
+                        [:k :!Tf18]
+                        [:j :!Cf18]
+                        [:h :!Of18]
+                ;;Screen saver on ","
+                        [:comma nil nil {:afterup [:alfred "screensaver" "com.chubamisc.afred"]}]
+                ;Sleep system with double tap period or single for sleep display
+                        [:period [:alfred "sleepsystem" "com.chubamisc.afred"] ["sleep-press" 1]]
+                        [:period [["sleep-press" 1]] nil {:delayed {:invoked [["sleep-press" 0] [:alfred "sleepscreen" "com.chubamisc.afred"]] :canceled ["sleep-press" 0]} :params {:delay 200}}]
+                ;;Most used Alfred Workflows
+                        [:b [:btt "ClearMenuBar"]]
+                        [:c [:alfred "caff" "com.shawn.patrick.rice.caffeinate.control"]]
+                        [:g [:alfred "google" "com.chubamisc.afred"]]
+                        [:i [:km "DC6A4949-C8D1-4024-AC50-74D34142C8AC"]]
+                        [:l [:alfred "getlink" "com.chubamisc.afred"]]
+                        [:m [:alfred "menu" "com.tedwise.menubarsearch"]]
+                        [:n [:btt "CloseNotifications"]]
+                ;;Update plex server
+                        [:p [:btt "plexupdate"]]
+                ;;Day One Journal Master Shortcut
+                        [:d [:sc "" "Day One Master"]]
+                ;;Media Buttons on numbers
+                        [:equal_sign :volume_increment]
+                        [:hyphen :volume_decrement]
+                        [:0 :mute]
+                        [:9 :fastforward]
+                        [:8 :play_or_pause]
+                        [:7 :rewind]
+                        [:6 :vk_none]
+                        [:5 :vk_none]
+                        [:4 :launchpad]
+                        [:3 :mission_control]
+                        [:2 :display_brightness_increment]
+                        [:1 :display_brightness_decrement]
+                ;;CMD + 1 & 2 for Keyboard Illumination
+                        [:!C2 :illumination_increment]
+                        [:!C1 :illumination_decrement]
+                ]}, 
+        {:des "M Mode - Markdown"
+                :rules [:m-mode
+                        [:i [:ts "Italics"]]
+                        [:b [:ts "Bold"]]
+                        [:!Sl [:ts "Link Removal"]]
+                        [:grave_accent_and_tilde [:ts "Code Line"]]
+                        [:!Rgrave_accent_and_tilde [:ts "Code Block"]]
+                        [:t [:ts "Title Case"]]
+                        [:u [:ts "Uppercase"]]
+                        [:!S9 [:ts "Parenthesis"]]
+                        [:open_bracket [:ts "Brackets"]]
+                        [:!Sopen_bracket [:ts "Curly Brackets"]]
+                        [:quote [:ts "Single Quotes"]]
+                        [:!Squote [:ts "Double Quotes"]]
+                ;;Simple options
+                        [:s [:!Cf17]]
+                ;;Case options
+                        [:c [:!Of17]]
+                ;;Enclose options
+                        [:e [:!Tf17]]
+                ;;TextSoap Window
+                        [:spacebar [:!COf17]]
+                ;;KM Search and Replace
+                        [:r [:km "8C2B33A2-79E1-4702-87CC-6D0A3ACB3194"]]
+                ;;KM Insert Link in Markdown
+                        [:l [:km "BD69C99E-1E65-42BB-89B4-AFC8036F98D6"]]
+                ]},
+        {:des "A Mode"
+                :rules [:a-mode
+                ;;ToolVox AI, Custom Prompt on Selected Text and Chat
+                        [:spacebar [:alfred "chatprompt" "com.toolvoxai.this"]]
+                ;;Ask Anything
+                        [:return_or_enter [:sc "•dc•" "ToolVox AI"]]
+                ;;Chat (Using selected text as Input)
+                        [:c [:alfred "chatonly" "com.toolvoxai.this"]]
+                ;;Chat (Using selected text as PROMPT)
+                        [:p [:alfred "sendaspromptchat" "com.toolvoxai.this"]]
+                ;;Replace (Using selected text as Input)
+                        [:r [:alfred "replace" "com.toolvoxai.this"]]
+                ;;Replace (Using selected text as PROMPT)
+                        [:!Cp [:alfred "sendaspromptreplace" "com.toolvoxai.this"]]
+                ;;Below (Insert Answer Below Using selected text as PROMPT)
+                        [:j [:alfred "sendaspromptattach" "com.toolvoxai.this"]]
+                ;;Just Run ToolVox AI Menu
+                        [:m [:sc "" "ToolVox AI"]]
+                ]},
+        {:des "SuperDuper Mode Rules"
+                :rules [:sd-mode
+                ;;Arrows
+                        [:##h :left_arrow :!terminal]
+                        [:##j :down_arrow :!terminal]
+                        [:##k :up_arrow :!terminal]
+                        [:##l :right_arrow :!terminal]
+                ;;Modifiers and Deletes
+                        ;;We exclude arc here, because the way to exit while in app switching outside of arc involves holding Command (in order not to select currect selected app), in app window switching needs control
+                        [:##caps_lock :!Cescape :!arc]
+                        [:##spacebar :left_shift]
+                        [:##f :left_command :!terminal]
+                        [:##a :left_option :!terminal]
+                        [:##n :delete_or_backspace :!terminal]
+                        [:#Operiod :delete_forward :!terminal]
+                        ;;This one is the only way to delete from current point to the end of line. Acts like command + delete forward.
+                        [:!Cperiod [:!Tk] :!terminal]
+                        ;;I want to try having a control key easy to reach in SD mode.
+                        [:##c :left_control]
+                ;;Tab Navigation (Arc has its separate rule for this)
+                        [:##i :!Ttab :!arc]
+                        [:##u :!STtab :!arc]
+                ;;Window Navigation (Arc has its separate rule for this)
+                        [:##y :!SOtab :!arc]
+                        [:##o :!Otab :!arc]
+                ;;App Navigation
+                        [:##m :!Ctab]
+                        [:##comma :!CStab]
+                ;;Let's Recover some common keys that will allow us quit or close apps while holding down control or command
+                        [:##7 :h]
+                        [:##8 :m]
+                        [:##9 :w]
+                        [:##0 :0]
+                ;;Tab Nav for ARC
+                        [:condi :arc :sd-mode]
+                        [:##u [:!COdown_arrow]]
+                        [:##i [:!COup_arrow]]
+                        [:##y [:!STtab]]
+                        [:##o [:!Ttab]]
+                        ;;Since we ecluded it above
+                        [:##caps_lock :!Tescape]
+                ;;For Terminal
+                        [:condi :terminal :sd-mode]
+                        [:##f [["cpress" 1]] nil {:afterup {:set ["cpress" 0]}}]
+                        [:##a [["opress" 1]] nil {:afterup {:set ["opress" 0]}}]
+                        [:##h :left_arrow [["cpress" 0]["opress" 0]]]
+                        [:##h :!Ta [["cpress" 1]["opress" 0]]]
+                        [:##h :!Oleft_arrow [["cpress" 0]["opress" 1]]]
+                        [:##l :right_arrow [["cpress" 0]["opress" 0]]]
+                        [:##l :!Te [["cpress" 1]["opress" 0]]]
+                        [:##l :!Oright_arrow [["cpress" 0]["opress" 1]]]
+                        [:##n :delete_or_backspace [["cpress" 0]["opress" 0]]]
+                        [:##n :!Tu [["cpress" 1]["opress" 0]]]
+                        [:##n :!Tw [["cpress" 0]["opress" 1]]]
+                        [:##period :delete_forward [["cpress" 0]["opress" 0]]]
+                        [:##period :!Tk [["cpress" 1]["opress" 0]]]
+                        ;;Terminal profile must use Option as meta for next one to work. In settings, profile, keyboard, in Terminal. 
+                        [:##period :!Od [["cpress" 0]["opress" 1]]]
+                        [:##j :down_arrow]
+                        [:##k :up_arrow]
+                ]},
+        {:des "W Mode"
+                :rules [:w-mode
+                        [:return_or_enter [:btt "FullScreen"]]
+                        [:spacebar [:btt "NotFullScreen"]]
+                        [:f [:btt "RealFull"]]
+                        [:h [:btt "WindowLeft"]]
+                        [:j [:btt "wbottom"]]
+                        [:k [:btt "wtop"]]
+                        [:l [:btt "WindowRight"]]
+                        [:u [:btt "w14"]]
+                        [:i [:btt "w24"]]
+                        [:m [:btt "w34"]]
+                        [:comma [:btt "w44"]]
+                        [:n [:btt "lspace"]]
+                        [:period [:btt "rspace"]]
+                        [:!Ch [:btt "ArrangeLR"]]
+                        [:!Cl [:btt "ArrangeRL"]]
+                        [:!Cj [:btt "Arrangebt"]]
+                        [:!Ck [:btt "Arrangetb"]]
+                ;;Hide current window or all other windows
+                        [:o :!Ch]
+                        [:y :!COh]
+                ]},
+        {:des "F buttons with FN"
+                :rules [
+                ;;Numbers + FN = F Keys
+                        [:!Fequal_sign :f12]
+                        [:!Fhyphen :f11]
+                        [:!F0 :f10]
+                        [:!F9 :f9]
+                        [:!F8 :f8]
+                        [:!F7 :f7]
+                        [:!F6 :f6]
+                        [:!F5 :f5]
+                        [:!F4 :f4]
+                        [:!F3 :f3]
+                        [:!F2 :f2]
+                        [:!F1 :f1]
+                ]}                           
+        ]
+}
+
+;; !  | means mandatory
+    ;; #  | means optional
+    ;; C  | left_command
+    ;; T  | left_control
+    ;; O  | left_option
+    ;; S  | left_shift
+    ;; F  | fn
+    ;; Q  | right_command
+    ;; W  | right_control
+    ;; E  | right_option
+    ;; R  | right_shift
+    ;; !! | mandatory command + control + optional + shift (hyper)
+    ;; ## | optional any
