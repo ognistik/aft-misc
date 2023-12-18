@@ -1,4 +1,7 @@
-# KARABINER - My Config
+# My Keyboard Remappings
+Read more in [THIS ARTICLE.](https://afadingthought.substack.com/p/turbocharge-your-productivity-with
+)
+
 ## CAPS MODE & F19 (CAPS LOCK)
 ***Quick tap = escape**, quick tap + key = caps mode, tap + hold = F19 mode*
 ### Caps Mode (has to be quickly activated before f19 kicks in).
