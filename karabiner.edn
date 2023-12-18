@@ -1,3 +1,5 @@
+;; I wrote and made a video about my setup. You can check it here:
+;; https://afadingthought.substack.com/p/turbocharge-your-productivity-with
 { 
         :profiles {
                 :Default {
