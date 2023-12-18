@@ -6,10 +6,10 @@
   * Semicolon = Spanish ñ
   * Quote = Spanish tilde
 * Mouseless Utilities
-  * H = Homerow App Scroll
-  * J = Homerow Click *(press space for rotating overlapping labels, shift to right click, cmd to cmd click, or double enter for double click)*.
-  * K = locks Superkey Seek
-* Alfred, BetterTouchTool and System Automation
+  * H = [Homerow App](https://www.homerow.app/) Scroll
+  * J = [Homerow]([Homerow App](https://www.homerow.app/)) Click *(press space for rotating overlapping labels, shift to right click, cmd to cmd click, or double enter for double click)*.
+  * K = locks [Superkey](https://superkey.app/) Seek
+* [Alfred](https://alfred.app/), [BetterTouchTool](https://folivora.ai/) and System Automation
   * Comma = screen saver.
   * Period single tap = sleeps display
   * Period double tap = sleeps system
@@ -58,10 +58,10 @@
 * S = Simple markdown options
 * C = Case options
 * E = Enclose options
-* L = Insert link from clipboard in markdown (Keyboard Maestro)
-* R = Search and replace from selected text (Keyboard Maestro)
+* L = Insert link from clipboard in markdown ([Keyboard Maestro](https://www.keyboardmaestro.com/main/))
+* R = Search and replace from selected text ([Keyboard Maestro]([Keyboard Maestro](https://www.keyboardmaestro.com/main/)))
 * Spacebar = TextSoap window
-* Easy to remember markdown formatting without menus (TextSoap, triggered by Applescript)))
+* Easy to remember markdown formatting without menus ([TextSoap](https://www.textsoap.com/), triggered by Applescript)))
   * B = Bold
   * I = Italics
   * Quote = Surrounds selected text on single quotes
@@ -71,7 +71,7 @@
   * Grave accent and tilde = Surrounds text with grave accents (line of code)
   * Shift + grave accent and tilde = Code block
 ---
-## A MODE (TOOLVOX AI SHORTCUT)
+## A MODE ([TOOLVOX AI](https://afadingthought.substack.com/p/toolvox-gpt-one-shortcut-to-rule) SHORTCUT)
 * Spacebar = Custom prompt on selected text. Chat.
 * Enter = Ask anything.
 * C = Menu with selected text and input. Chat.
@@ -98,10 +98,10 @@
 * Tab Navigation 
   * I = Control tab = next tab
   * U = Control shift tab = previous tab
-* Window Navigation (with Contexts)
+* Window Navigation (with [Contexts](https://contexts.co/))
   * Y = Shift option tab
   * O = Option tab
-* App Switching (with Contexts)
+* App Switching (with [Contexts]([Contexts](https://contexts.co/)))
   * M = Command tab
   * Comma = Command Shift Tab
 ---
