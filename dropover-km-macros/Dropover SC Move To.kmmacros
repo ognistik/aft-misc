@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Activate</key>
+		<string>Normal</string>
+		<key>CreationDate</key>
+		<real>674597877.60129905</real>
+		<key>Macros</key>
+		<array>
+			<dict>
+				<key>Actions</key>
+				<array>
+					<dict>
+						<key>Action</key>
+						<string>IgnoreCaseRegEx</string>
+						<key>ActionUID</key>
+						<integer>501484</integer>
+						<key>Captures</key>
+						<array>
+							<string></string>
+							<string>localFrom</string>
+							<string>localTo</string>
+						</array>
+						<key>MacroActionType</key>
+						<string>SearchRegEx</string>
+						<key>Search</key>
+						<string>(.*),(.*)</string>
+						<key>Source</key>
+						<string>Text</string>
+						<key>Text</key>
+						<string>%TriggerValue%</string>
+					</dict>
+					<dict>
+						<key>ActionUID</key>
+						<integer>501487</integer>
+						<key>Destination</key>
+						<string>%localTo%</string>
+						<key>MacroActionType</key>
+						<string>File</string>
+						<key>Operation</key>
+						<string>Move</string>
+						<key>Source</key>
+						<string>%localFrom%</string>
+					</dict>
+				</array>
+				<key>CreationDate</key>
+				<real>696571162.17507601</real>
+				<key>ModificationDate</key>
+				<real>742252353.33975995</real>
+				<key>Name</key>
+				<string>Dropover SC Move To</string>
+				<key>Triggers</key>
+				<array/>
+				<key>UID</key>
+				<string>FD8E0DF4-7737-4ADF-B5CF-821A7E761FB8</string>
+			</dict>
+		</array>
+		<key>Name</key>
+		<string>Dropover</string>
+		<key>ToggleMacroUID</key>
+		<string>08024246-717E-4ABF-9AE4-9606BD58C1C7</string>
+		<key>UID</key>
+		<string>4CF9B557-5464-4B5D-8EBE-171D89C09678</string>
+	</dict>
+</array>
+</plist>
