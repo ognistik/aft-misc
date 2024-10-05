@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Activate</key>
+		<string>Normal</string>
+		<key>CreationDate</key>
+		<real>727664813.70383894</real>
+		<key>Macros</key>
+		<array>
+			<dict>
+				<key>Actions</key>
+				<array>
+					<dict>
+						<key>ActionUID</key>
+						<integer>15535718</integer>
+						<key>IsDisclosed</key>
+						<false/>
+						<key>MacroActionType</key>
+						<string>Comment</string>
+						<key>StyledText</key>
+						<data>
+						cnRmZAAAAAADAAAAAgAAAAcAAABU
+						WFQucnRmAQAAAC57AgAAKwAAAAEA
+						AABzAgAAe1xydGYxXGFuc2lcYW5z
+						aWNwZzEyNTJcY29jb2FydGYyODE4
+						Clxjb2NvYXRleHRzY2FsaW5nMFxj
+						b2NvYXBsYXRmb3JtMHtcZm9udHRi
+						bFxmMFxmc3dpc3NcZmNoYXJzZXQw
+						IEhlbHZldGljYTt9CntcY29sb3J0
+						Ymw7XHJlZDI1NVxncmVlbjI1NVxi
+						bHVlMjU1O1xyZWQwXGdyZWVuMFxi
+						bHVlMDt9CntcKlxleHBhbmRlZGNv
+						bG9ydGJsOztcY3NzcmdiXGMwXGMw
+						XGMwXGM4NDcwNlxjbmFtZSBjb250
+						cm9sVGV4dENvbG9yO30KXHBhcmRc
+						dHg1NjBcdHgxMTIwXHR4MTY4MFx0
+						eDIyNDBcdHgyODAwXHR4MzM2MFx0
+						eDM5MjBcdHg0NDgwXHR4NTA0MFx0
+						eDU2MDBcdHg2MTYwXHR4NjcyMFxw
+						YXJkaXJuYXR1cmFsXHBhcnRpZ2h0
+						ZW5mYWN0b3IwCgpcZjBcZnMyNiBc
+						Y2YyIEJ5IGRlZmF1bHQsIHRoaXMg
+						bWFjcm8gd2lsbCBiZSB0cmlnZ2Vy
+						ZWQgYnkgaXRzZWxmLiBIb3dldmVy
+						LCBpZiB0aGUgdHJhbnNjcmlwdGlv
+						biBpcyByZXF1ZXN0ZWQgZm9yIGFu
+						IGluZGl2aWR1YWwgYXVkaW8gZmls
+						ZSwgdGhlIGZpbGUgd2lsbCBiZSBz
+						aGFyZWQgdG8gdGhlIFNob3J0Y3V0
+						IGFuZCB0aGUgU2hvcnRjdXQgaW4g
+						dHVybiB3aWxsIHRyaWdnZXIgdGhp
+						cyBtYWNyby4uLiBzbyBmaXJzdCB3
+						ZSBuZWVkIHRvIGRlZmluZSB0aGF0
+						LiB9AQAAACMAAAABAAAABwAAAFRY
+						VC5ydGYQAAAAulf8ZrYBAAAAAAAA
+						AAAAAA==
+						</data>
+						<key>Title</key>
+						<string>Trigger Mode</string>
+					</dict>
+					<dict>
+						<key>ActionUID</key>
+						<integer>15534542</integer>
+						<key>IsDisclosed</key>
+						<false/>
+						<key>MacroActionType</key>
+						<string>SetVariableToText</string>
+						<key>Text</key>
+						<string>%TriggerValue%</string>
+						<key>Variable</key>
+						<string>localTrigger</string>
+					</dict>
+					<dict>
+						<key>ActionUID</key>
+						<integer>15535719</integer>
+						<key>IsDisclosed</key>
+						<false/>
+						<key>MacroActionType</key>
+						<string>Comment</string>
+						<key>StyledText</key>
+						<data>
+						cnRmZAAAAAADAAAAAgAAAAcAAABU
+						WFQucnRmAQAAAC4gAgAAKwAAAAEA
+						AAAYAgAAe1xydGYxXGFuc2lcYW5z
+						aWNwZzEyNTJcY29jb2FydGYyODE4
+						Clxjb2NvYXRleHRzY2FsaW5nMFxj
+						b2NvYXBsYXRmb3JtMHtcZm9udHRi
+						bFxmMFxmc3dpc3NcZmNoYXJzZXQw
+						IEhlbHZldGljYTt9CntcY29sb3J0
+						Ymw7XHJlZDI1NVxncmVlbjI1NVxi
+						bHVlMjU1O1xyZWQwXGdyZWVuMFxi
+						bHVlMDt9CntcKlxleHBhbmRlZGNv
+						bG9ydGJsOztcY3NzcmdiXGMwXGMw
+						XGMwXGM4NDcwNlxjbmFtZSBjb250
+						cm9sVGV4dENvbG9yO30KXHBhcmRc
+						dHg1NjBcdHgxMTIwXHR4MTY4MFx0
+						eDIyNDBcdHgyODAwXHR4MzM2MFx0
+						eDM5MjBcdHg0NDgwXHR4NTA0MFx0
+						eDU2MDBcdHg2MTYwXHR4NjcyMFxw
+						YXJkaXJuYXR1cmFsXHBhcnRpZ2h0
+						ZW5mYWN0b3IwCgpcZjBcZnMyNiBc
+						Y2YyIFNpbWlsYXJseSwgdGhpcyBt
+						YWNybyBjb3VsZCBhbHJlYWR5IGJl
+						IHJlY2VpdmluZyBhIERpY3Rpb25h
+						cnkgb3IgKGlmIHRyaWdnZXJlZCBp
+						bmRlcGVuZGVudGx5KSBpbiBuZWVk
+						cyB0byB0cmlnZ2VyIHRoZSBTaG9y
+						dGN1dCBhbmQgcmVjZWl2ZSB0aGUg
+						ZGljdGlvbmFyeSBiYWNrLn0BAAAA
+						IwAAAAEAAAAHAAAAVFhULnJ0ZhAA
+						AAD8V/xmtgEAAAAAAAAAAAAA
+						</data>
+						<key>Title</key>
+						<string>Shortcut or Receive</string>
+					</dict>
+					<dict>
+						<key>ActionUID</key>
+						<integer>15534151</integer>
+						<key>Conditions</key>
+						<dict>
+							<key>ConditionList</key>
+							<array>
+								<dict>
+									<key>ConditionType</key>
+									<string>Variable</string>
+									<key>Variable</key>
+									<string>localTrigger</string>
+									<key>VariableConditionType</key>
+									<string>IsNotEmpty</string>
+									<key>VariableValue</key>
+									<string>value</string>
+								</dict>
+							</array>
+							<key>ConditionListMatch</key>
+							<string>All</string>
+						</dict>
+						<key>ElseActions</key>
+						<array>
+							<dict>
+								<key>ActionUID</key>
+								<integer>15534139</integer>
+								<key>DisplayKind</key>
+								<string>Variable</string>
+								<key>ExecuteOrEdit</key>
+								<string>Execute</string>
+								<key>IncludeStdErr</key>
+								<false/>
+								<key>MacroActionType</key>
+								<string>ExecuteShortcut</string>
+								<key>Shortcut</key>
+								<string>Record &amp; Transcribe</string>
+								<key>Source</key>
+								<string>Nothing</string>
+								<key>TimeOutAbortsMacro</key>
+								<true/>
+								<key>TrimResults</key>
+								<true/>
+								<key>Variable</key>
+								<string>localDictionary</string>
+							</dict>
+						</array>
+						<key>IsDisclosed</key>
+						<false/>
+						<key>MacroActionType</key>
+						<string>IfThenElse</string>
+						<key>ThenActions</key>
+						<array>
+							<dict>
+								<key>ActionUID</key>
+								<integer>15534152</integer>
+								<key>MacroActionType</key>
+								<string>SetVariableToText</string>
+								<key>Text</key>
+								<string>%localTrigger%</string>
+								<key>Variable</key>
+								<string>localDictionary</string>
+							</dict>
+						</array>
+						<key>TimeOutAbortsMacro</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>ActionUID</key>
+						<integer>15535720</integer>
+						<key>IsDisclosed</key>
+						<false/>
+						<key>MacroActionType</key>
+						<string>Comment</string>
+						<key>StyledText</key>
+						<data>
+						cnRmZAAAAAADAAAAAgAAAAcAAABU
+						WFQucnRmAQAAAC63AQAAKwAAAAEA
+						AACvAQAAe1xydGYxXGFuc2lcYW5z
+						aWNwZzEyNTJcY29jb2FydGYyODE4
+						Clxjb2NvYXRleHRzY2FsaW5nMFxj
+						b2NvYXBsYXRmb3JtMHtcZm9udHRi
+						bFxmMFxmc3dpc3NcZmNoYXJzZXQw
+						IEhlbHZldGljYTt9CntcY29sb3J0
+						Ymw7XHJlZDI1NVxncmVlbjI1NVxi
+						bHVlMjU1O1xyZWQwXGdyZWVuMFxi
+						bHVlMDt9CntcKlxleHBhbmRlZGNv
+						bG9ydGJsOztcY3NzcmdiXGMwXGMw
+						XGMwXGM4NDcwNlxjbmFtZSBjb250
+						cm9sVGV4dENvbG9yO30KXHBhcmRc
+						dHg1NjBcdHgxMTIwXHR4MTY4MFx0
+						eDIyNDBcdHgyODAwXHR4MzM2MFx0
+						eDM5MjBcdHg0NDgwXHR4NTA0MFx0
+						eDU2MDBcdHg2MTYwXHR4NjcyMFxw
+						YXJkaXJuYXR1cmFsXHBhcnRpZ2h0
+						ZW5mYWN0b3IwCgpcZjBcZnMyNiBc
+						Y2YyIFdlIGFzc2lnbiBhbGwgdGhl
+						IHZhcmlhYmxlcyByZWNlaXZlZCBm
+						cm9tIHRoZSBTaG9ydGN1dH0BAAAA
+						IwAAAAEAAAAHAAAAVFhULnJ0ZhAA
+						AAAQWPxmtgEAAAAAAAAAAAAA
+						</data>
+						<key>Title</key>
+						<string>Variables</string>
+					</dict>
+					<dict>
+						<key>ActionUID</key>
+						<integer>15535323</integer>
+						<key>IsDisclosed</key>
+						<false/>
+						<key>MacroActionType</key>
+						<string>SetVariableToText</string>
+						<key>Text</key>
+						<string>%JSONValue%localDictionary.theUrl%</string>
+						<key>Variable</key>
+						<string>localUrl</string>
+					</dict>
+					<dict>
+						<key>ActionUID</key>
+						<integer>15535324</integer>
+						<key>IsDisclosed</key>
+						<false/>
+						<key>MacroActionType</key>
+						<string>SetVariableToText</string>
+						<key>Text</key>
+						<string>%JSONValue%localDictionary.theModel%</string>
+						<key>Variable</key>
+						<string>localModel</string>
+					</dict>
+					<dict>
+						<key>ActionUID</key>
+						<integer>15535325</integer>
+						<key>IsDisclosed</key>
+						<false/>
+						<key>MacroActionType</key>
+						<string>SetVariableToText</string>
+						<key>Text</key>
+						<string>%JSONValue%localDictionary.theToken%</string>
+						<key>Variable</key>
+						<string>localToken</string>
+					</dict>
+					<dict>
+						<key>ActionUID</key>
+						<integer>15535326</integer>
+						<key>IsDisclosed</key>
+						<false/>
+						<key>MacroActionType</key>
+						<string>SetVariableToText</string>
+						<key>Text</key>
+						<string>%JSONValue%localDictionary.theSystem%</string>
+						<key>Variable</key>
+						<string>localSystemPrompt</string>
+					</dict>
+					<dict>
+						<key>ActionUID</key>
+						<integer>15534149</integer>
+						<key>IsDisclosed</key>
+						<false/>
+						<key>MacroActionType</key>
+						<string>Comment</string>
+						<key>StyledText</key>
+						<data>
+						cnRmZAAAAAADAAAAAgAAAAcAAABU
+						WFQucnRmAQAAAC7LAQAAKwAAAAEA
+						AADDAQAAe1xydGYxXGFuc2lcYW5z
+						aWNwZzEyNTJcY29jb2FydGYyODE4
+						Clxjb2NvYXRleHRzY2FsaW5nMFxj
+						b2NvYXBsYXRmb3JtMHtcZm9udHRi
+						bFxmMFxmc3dpc3NcZmNoYXJzZXQw
+						IEhlbHZldGljYTt9CntcY29sb3J0
+						Ymw7XHJlZDI1NVxncmVlbjI1NVxi
+						bHVlMjU1O1xyZWQwXGdyZWVuMFxi
+						bHVlMDt9CntcKlxleHBhbmRlZGNv
+						bG9ydGJsOztcY3NzcmdiXGMwXGMw
+						XGMwXGM4NDcwNlxjbmFtZSBjb250
+						cm9sVGV4dENvbG9yO30KXHBhcmRc
+						dHg1NjBcdHgxMTIwXHR4MTY4MFx0
+						eDIyNDBcdHgyODAwXHR4MzM2MFx0
+						eDM5MjBcdHg0NDgwXHR4NTA0MFx0
+						eDU2MDBcdHg2MTYwXHR4NjcyMFxw
+						YXJkaXJuYXR1cmFsXHBhcnRpZ2h0
+						ZW5mYWN0b3IwCgpcZjBcZnMyNiBc
+						Y2YyIFdlIGNvbWJpbmUgYm90aCB0
+						aGUgUHJlZml4IGFuZCBUcmFuc2Ny
+						aXB0aW9uIGluc2lkZSB0aGUgZm9s
+						bG93aW5nIHZhcmlhYmxlfQEAAAAj
+						AAAAAQAAAAcAAABUWFQucnRmEAAA
+						AHBT/Ga2AQAAAAAAAAAAAAA=
+						</data>
+						<key>Title</key>
+						<string>Prefix</string>
+					</dict>
+					<dict>
+						<key>ActionUID</key>
+						<integer>15535327</integer>
+						<key>IsDisclosed</key>
+						<false/>
+						<key>MacroActionType</key>
+						<string>SetVariableToText</string>
+						<key>Text</key>
+						<string>%JSONValue%localDictionary.thePrefix% %JSONValue%localDictionary.theText%</string>
+						<key>Variable</key>
+						<string>localPrefix</string>
+					</dict>
+					<dict>
+						<key>ActionUID</key>
+						<integer>15534148</integer>
+						<key>IsDisclosed</key>
+						<false/>
+						<key>MacroActionType</key>
+						<string>Comment</string>
+						<key>StyledText</key>
+						<data>
+						cnRmZAAAAAADAAAAAgAAAAcAAABU
+						WFQucnRmAQAAAC7aAQAAKwAAAAEA
+						AADSAQAAe1xydGYxXGFuc2lcYW5z
+						aWNwZzEyNTJcY29jb2FydGYyODE4
+						Clxjb2NvYXRleHRzY2FsaW5nMFxj
+						b2NvYXBsYXRmb3JtMHtcZm9udHRi
+						bFxmMFxmc3dpc3NcZmNoYXJzZXQw
+						IEhlbHZldGljYTt9CntcY29sb3J0
+						Ymw7XHJlZDI1NVxncmVlbjI1NVxi
+						bHVlMjU1O1xyZWQwXGdyZWVuMFxi
+						bHVlMDt9CntcKlxleHBhbmRlZGNv
+						bG9ydGJsOztcY3NzcmdiXGMwXGMw
+						XGMwXGM4NDcwNlxjbmFtZSBjb250
+						cm9sVGV4dENvbG9yO30KXHBhcmRc
+						dHg1NjBcdHgxMTIwXHR4MTY4MFx0
+						eDIyNDBcdHgyODAwXHR4MzM2MFx0
+						eDM5MjBcdHg0NDgwXHR4NTA0MFx0
+						eDU2MDBcdHg2MTYwXHR4NjcyMFxw
+						YXJkaXJuYXR1cmFsXHBhcnRpZ2h0
+						ZW5mYWN0b3IwCgpcZjBcZnMyNiBc
+						Y2YyIFRoZSBmb2xsb3dpbmcgZXNj
+						YXBlcyB0aGUgU3lzdGVtIFByb21w
+						dCBhbmQgdGhlIFByZWZpeCAod2hp
+						Y2ggY29udGFpbnMgdGhlIHRyYW5z
+						Y3JpcHRpb24pfQEAAAAjAAAAAQAA
+						AAcAAABUWFQucnRmEAAAAIdT/Ga2
+						AQAAAAAAAAAAAAA=
+						</data>
+						<key>Title</key>
+						<string>Escaping</string>
+					</dict>
+					<dict>
+						<key>ActionUID</key>
+						<integer>15534135</integer>
+						<key>DisplayKind</key>
+						<string>Variable</string>
+						<key>HonourFailureSettings</key>
+						<true/>
+						<key>IncludeStdErr</key>
+						<false/>
+						<key>IncludedVariables</key>
+						<array>
+							<string>9999</string>
+						</array>
+						<key>IsDisclosed</key>
+						<false/>
+						<key>MacroActionType</key>
+						<string>ExecuteJavaScriptForAutomation</string>
+						<key>NotifyOnFailure</key>
+						<false/>
+						<key>Path</key>
+						<string></string>
+						<key>StopOnFailure</key>
+						<false/>
+						<key>Text</key>
+						<string>(function(inDesignMode, designModeParams) {
+	'use strict';
+    const _kme = Application("Keyboard Maestro Engine");
+    const _currentApp = Application.currentApplication();
+    _currentApp.includeStandardAdditions = true;
+
+	function getKMVariable(name, required) {
+		var result = undefined;
+		if (inDesignMode &amp;&amp; designModeParams)
+			result = designModeParams[name];
+		if (result === undefined) {
+            if (name.match(/^Instance|^local/)) {
+                var inst = _currentApp.systemAttribute("KMINSTANCE");
+                result = _kme.getvariable(name, {instance: inst});
+            } else {
+                result = _kme.getvariable(name);
+            }
+        }
+        if (required &amp;&amp; !result)
+			throw new Error("Variable '" + name + "' is empty");
+		return result;
+	}
+	// #endregion
+
+function execute() {
+    var str = getKMVariable("localSystemPrompt", true);
+    str = str.replace(/[\u201C\u201D]/g, '"');
+    return JSON.stringify(str).slice(1, -1);
+}
+
+	try {
+		return execute();
+	} catch (e) {
+		return "Error on line: " + e.line + ": " + e.message;
+	}
+
+})(false);</string>
+						<key>TimeOutAbortsMacro</key>
+						<true/>
+						<key>TrimResults</key>
+						<true/>
+						<key>TrimResultsNew</key>
+						<true/>
+						<key>UseModernSyntax</key>
+						<false/>
+						<key>UseText</key>
+						<true/>
+						<key>Variable</key>
+						<string>localSystemPrompt</string>
+					</dict>
+					<dict>
+						<key>ActionUID</key>
+						<integer>15534136</integer>
+						<key>DisplayKind</key>
+						<string>Variable</string>
+						<key>HonourFailureSettings</key>
+						<true/>
+						<key>IncludeStdErr</key>
+						<false/>
+						<key>IncludedVariables</key>
+						<array>
+							<string>9999</string>
+						</array>
+						<key>IsDisclosed</key>
+						<false/>
+						<key>MacroActionType</key>
+						<string>ExecuteJavaScriptForAutomation</string>
+						<key>NotifyOnFailure</key>
+						<false/>
+						<key>Path</key>
+						<string></string>
+						<key>StopOnFailure</key>
+						<false/>
+						<key>Text</key>
+						<string>(function(inDesignMode, designModeParams) {
+	'use strict';
+    const _kme = Application("Keyboard Maestro Engine");
+    const _currentApp = Application.currentApplication();
+    _currentApp.includeStandardAdditions = true;
+
+	function getKMVariable(name, required) {
+		var result = undefined;
+		if (inDesignMode &amp;&amp; designModeParams)
+			result = designModeParams[name];
+		if (result === undefined) {
+            if (name.match(/^Instance|^local/)) {
+                var inst = _currentApp.systemAttribute("KMINSTANCE");
+                result = _kme.getvariable(name, {instance: inst});
+            } else {
+                result = _kme.getvariable(name);
+            }
+        }
+        if (required &amp;&amp; !result)
+			throw new Error("Variable '" + name + "' is empty");
+		return result;
+	}
+	// #endregion
+
+function execute() {
+    var str = getKMVariable("localPrefix", true);
+    str = str.replace(/[\u201C\u201D]/g, '"');
+    return JSON.stringify(str).slice(1, -1);
+}
+
+	try {
+		return execute();
+	} catch (e) {
+		return "Error on line: " + e.line + ": " + e.message;
+	}
+
+})(false);</string>
+						<key>TimeOutAbortsMacro</key>
+						<true/>
+						<key>TrimResults</key>
+						<true/>
+						<key>TrimResultsNew</key>
+						<true/>
+						<key>UseModernSyntax</key>
+						<false/>
+						<key>UseText</key>
+						<true/>
+						<key>Variable</key>
+						<string>localPrefix</string>
+					</dict>
+					<dict>
+						<key>ActionUID</key>
+						<integer>15535721</integer>
+						<key>IsDisclosed</key>
+						<false/>
+						<key>MacroActionType</key>
+						<string>Comment</string>
+						<key>StyledText</key>
+						<data>
+						cnRmZAAAAAADAAAAAgAAAAcAAABU
+						WFQucnRmAQAAAC66AQAAKwAAAAEA
+						AACyAQAAe1xydGYxXGFuc2lcYW5z
+						aWNwZzEyNTJcY29jb2FydGYyODE4
+						Clxjb2NvYXRleHRzY2FsaW5nMFxj
+						b2NvYXBsYXRmb3JtMHtcZm9udHRi
+						bFxmMFxmc3dpc3NcZmNoYXJzZXQw
+						IEhlbHZldGljYTt9CntcY29sb3J0
+						Ymw7XHJlZDI1NVxncmVlbjI1NVxi
+						bHVlMjU1O1xyZWQwXGdyZWVuMFxi
+						bHVlMDt9CntcKlxleHBhbmRlZGNv
+						bG9ydGJsOztcY3NzcmdiXGMwXGMw
+						XGMwXGM4NDcwNlxjbmFtZSBjb250
+						cm9sVGV4dENvbG9yO30KXHBhcmRc
+						dHg1NjBcdHgxMTIwXHR4MTY4MFx0
+						eDIyNDBcdHgyODAwXHR4MzM2MFx0
+						eDM5MjBcdHg0NDgwXHR4NTA0MFx0
+						eDU2MDBcdHg2MTYwXHR4NjcyMFxw
+						YXJkaXJuYXR1cmFsXHBhcnRpZ2h0
+						ZW5mYWN0b3IwCgpcZjBcZnMyNiBc
+						Y2YyIFRoZSBmb2xsb3dpbmcgbWFr
+						ZXMgdGhlIHJlcXVlc3QgZWl0aGVy
+						IGxvY2FsbHkgb3Igb25saW5lLn0B
+						AAAAIwAAAAEAAAAHAAAAVFhULnJ0
+						ZhAAAAArWPxmtgEAAAAAAAAAAAAA
+						</data>
+						<key>Title</key>
+						<string>Request</string>
+					</dict>
+					<dict>
+						<key>ActionUID</key>
+						<integer>15534138</integer>
+						<key>DisplayKind</key>
+						<string>Variable</string>
+						<key>HonourFailureSettings</key>
+						<true/>
+						<key>IncludeStdErr</key>
+						<false/>
+						<key>IncludedVariables</key>
+						<array>
+							<string>9999</string>
+						</array>
+						<key>IsDisclosed</key>
+						<false/>
+						<key>MacroActionType</key>
+						<string>ExecuteShellScript</string>
+						<key>Path</key>
+						<string></string>
+						<key>Source</key>
+						<string>Nothing</string>
+						<key>Text</key>
+						<string>curl $KMVAR_localUrl \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $KMVAR_localToken" \
+  -d "{
+     \"messages\": [{\"role\": \"system\", \"content\": \"$KMVAR_localSystemPrompt\"},{\"role\": \"user\", \"content\": \"$KMVAR_localPrefix\"}],
+     \"temperature\": 0.5, \"model\": \"$KMVAR_localModel\"
+   }"</string>
+						<key>TimeOutAbortsMacro</key>
+						<true/>
+						<key>TrimResults</key>
+						<true/>
+						<key>TrimResultsNew</key>
+						<true/>
+						<key>UseText</key>
+						<true/>
+						<key>Variable</key>
+						<string>localResult</string>
+					</dict>
+					<dict>
+						<key>ActionUID</key>
+						<integer>15534150</integer>
+						<key>IsDisclosed</key>
+						<false/>
+						<key>MacroActionType</key>
+						<string>Comment</string>
+						<key>StyledText</key>
+						<data>
+						cnRmZAAAAAADAAAAAgAAAAcAAABU
+						WFQucnRmAQAAAC74AQAAKwAAAAEA
+						AADwAQAAe1xydGYxXGFuc2lcYW5z
+						aWNwZzEyNTJcY29jb2FydGYyODE4
+						Clxjb2NvYXRleHRzY2FsaW5nMFxj
+						b2NvYXBsYXRmb3JtMHtcZm9udHRi
+						bFxmMFxmc3dpc3NcZmNoYXJzZXQw
+						IEhlbHZldGljYTt9CntcY29sb3J0
+						Ymw7XHJlZDI1NVxncmVlbjI1NVxi
+						bHVlMjU1O1xyZWQwXGdyZWVuMFxi
+						bHVlMDt9CntcKlxleHBhbmRlZGNv
+						bG9ydGJsOztcY3NzcmdiXGMwXGMw
+						XGMwXGM4NDcwNlxjbmFtZSBjb250
+						cm9sVGV4dENvbG9yO30KXHBhcmRc
+						dHg1NjBcdHgxMTIwXHR4MTY4MFx0
+						eDIyNDBcdHgyODAwXHR4MzM2MFx0
+						eDM5MjBcdHg0NDgwXHR4NTA0MFx0
+						eDU2MDBcdHg2MTYwXHR4NjcyMFxw
+						YXJkaXJuYXR1cmFsXHBhcnRpZ2h0
+						ZW5mYWN0b3IwCgpcZjBcZnMyNiBc
+						Y2YyIFRoZSByZXN1bHQgZnJvbSB0
+						aGUgTExNIGlzIGluIHRoaXMgdmFy
+						aWFibGUgYW5kIGNhbiBiZSB1c2Vk
+						IGFueXdoZXJlOiAlSlNPTlZhbHVl
+						JWxvY2FsUmVzdWx0LmNob2ljZXMu
+						MS5tZXNzYWdlLmNvbnRlbnQlfQEA
+						AAAjAAAAAQAAAAcAAABUWFQucnRm
+						EAAAAMw6/Ga2AQAAAAAAAAAAAAA=
+						</data>
+						<key>Title</key>
+						<string>Result</string>
+					</dict>
+					<dict>
+						<key>ActionUID</key>
+						<integer>15534932</integer>
+						<key>IsDisclosed</key>
+						<false/>
+						<key>JustDisplay</key>
+						<false/>
+						<key>MacroActionType</key>
+						<string>SetClipboardToText</string>
+						<key>Text</key>
+						<string>%JSONValue%localResult.choices.1.message.content%</string>
+					</dict>
+					<dict>
+						<key>ActionUID</key>
+						<integer>15534146</integer>
+						<key>IsDisclosed</key>
+						<false/>
+						<key>MacroActionType</key>
+						<string>Alert</string>
+						<key>SoundPath</key>
+						<string></string>
+						<key>Text</key>
+						<string>%JSONValue%localResult.choices.1.message.content%</string>
+						<key>TimeOutAbortsMacro</key>
+						<true/>
+						<key>Title</key>
+						<string>Keyboard Maestro Alert</string>
+					</dict>
+				</array>
+				<key>CreationDate</key>
+				<real>749493274.03603601</real>
+				<key>ModificationDate</key>
+				<real>749506476.00600398</real>
+				<key>Name</key>
+				<string>AI Dictation</string>
+				<key>Triggers</key>
+				<array/>
+				<key>UID</key>
+				<string>11E6F22A-2FCB-456C-84C6-0A56CFBE1DD6</string>
+			</dict>
+		</array>
+		<key>Name</key>
+		<string>Global Macro Group</string>
+		<key>ToggleMacroUID</key>
+		<string>D5F07683-C5FD-464F-A516-AB20B83EC07F</string>
+		<key>UID</key>
+		<string>804D32AF-0B39-439F-8EF3-493A833B14CA</string>
+	</dict>
+</array>
+</plist>
